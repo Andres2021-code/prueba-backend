@@ -20,3 +20,5 @@ Route::post('/login', 'API\AuthController@login');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/productos/list', 'ProductoController@listProductos');
+Route::post('/productos', 'ProductoController@register');
