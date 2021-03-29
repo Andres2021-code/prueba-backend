@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\User;
-use App\Tipo_usuario;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -32,11 +31,10 @@ class AuthController extends ApiController
   {
       
     $validacion = Validator::make($request->all(), [
-        'nombre_usuario' => 'required',
-        'usuario_cedula' => 'required', 
+        'name' => 'required',
         'email' => 'required|email',
         'password' => 'required',
-        'tipo_id' => '',
+        'confirm_password' => '',
     ]);
 
     if($validacion->fails()){
